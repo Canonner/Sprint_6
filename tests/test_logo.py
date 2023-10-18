@@ -1,4 +1,4 @@
-from common_data import Urls
+from tests.common_data import Urls
 from pages.home_page import HomePage
 from locators.base_page_locators import BasePageLocators as Bpl
 from pages.order_page import OrderPage

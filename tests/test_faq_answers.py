@@ -1,5 +1,5 @@
 import pytest
-from common_data import FaqAnswers
+from tests.common_data import FaqAnswers
 from pages.home_page import HomePage
 
 
