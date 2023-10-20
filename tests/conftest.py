@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from tests.common_data import Urls
+from common_data import Urls
 
 
 @pytest.fixture

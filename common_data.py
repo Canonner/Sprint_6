@@ -34,3 +34,6 @@ class OrderData:
         (Bpl.order_button_header, "Заказать в шапке страницы"),
         (Hpl.order_button, "Заказать внизу страницы"),
     ]
+
+
+print(FaqAnswers.test_data[1])

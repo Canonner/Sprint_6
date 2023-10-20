@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from tests.common_data import OrderData
+from common_data import OrderData
 
 
 class OrderPageLocators:

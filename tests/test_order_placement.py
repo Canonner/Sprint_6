@@ -3,7 +3,7 @@ from pages.home_page import HomePage
 from pages.order_page import OrderPage
 from locators.base_page_locators import BasePageLocators as Bpl
 from locators.order_page_locators import OrderPageLocators as Opl
-from tests.common_data import OrderData
+from common_data import OrderData
 
 
 class TestOrderPlacement:
