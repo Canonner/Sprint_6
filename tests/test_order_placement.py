@@ -1,3 +1,4 @@
+import allure
 import pytest
 from pages.home_page import HomePage
 from pages.order_page import OrderPage
@@ -8,6 +9,9 @@ from common_data import OrderData
 
 class TestOrderPlacement:
 
+
+    @allure.title('Parameterized test of successful order placement via the Order buttons in the website header and on the home page')
+    @allure.description('Checking that after placing order the confirmation message with the order number is displayed')
     @pytest.mark.parametrize("order_button_locator, button_description", OrderData.order_buttons)
     def test_order_placement(self, driver, order_button_locator, button_description):
         home_page = HomePage(driver)

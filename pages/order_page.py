@@ -1,3 +1,4 @@
+import allure
 from pages.base_page import BasePage
 from locators.order_page_locators import OrderPageLocators as Opl
 
@@ -17,33 +18,42 @@ class OrderPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
+    @allure.step('Filling user name field with data from common_data.py')
     def send_user_name(self, name):
         self.send_user_data(self.name_field, name)
 
+    @allure.step('Filling user surname field with data from common_data.py')
     def send_user_surname(self, surname):
         self.send_user_data(self.surname_field, surname)
 
+    @allure.step('Filling user address field with data from common_data.py')
     def send_user_address(self, address):
         self.send_user_data(self.address_field, address)
 
+    @allure.step('Choosing a random metro station from dropdown metro stations list')
     def send_user_metro_station(self):
         self.click_element(self.metro_station_field)
         self.click_element(self.metro_station_dropdown_list)
 
+    @allure.step('Filling user phone number field with data from common_data.py')
     def send_user_phone_number(self, phone_number):
         self.send_user_data(self.phone_number_field, phone_number)
 
+    @allure.step('Choosing the rent start date as "today + one day" with data from common_data.py')
     def send_user_start_date(self, start_date):
         self.send_user_data(self.start_date_field, start_date)
         self.confirm_by_pressing_return(self.start_date_field)
 
+    @allure.step('Filling the rent period field with data from common_data.py')
     def send_user_rent_period(self):
         self.click_element(self.rent_period_field)
         self.click_element(self.rent_period_dropdown_list)
 
+    @allure.step('Choosing the color with data from common_data.py')
     def choose_color(self):
         self.click_element(self.color_choice_checkbox)
 
+    @allure.step('Combined step for filling the user data form')
     def fill_user_data_form(self, name, surname, address, phone_number):
         self.send_user_name(name)
         self.send_user_surname(surname)
@@ -51,6 +61,7 @@ class OrderPage(BasePage):
         self.send_user_metro_station()
         self.send_user_phone_number(phone_number)
 
+    @allure.step('Combined step for filling the rent data form')
     def fill_rent_data_form(self, start_date):
         self.send_user_start_date(start_date)
         self.send_user_rent_period()
